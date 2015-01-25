@@ -1,10 +1,16 @@
-var object = {
-    name:'objectName',
-    age: '20',
-    get: function(){
-	return 'the name of the object is: ' + this.name;
+var getObject = function(){
+    var object = {
+	name:'objectName',
+	age: '20',
+	get: function(){
+	    return 'the name of the object is: ' + this.name;
+	}
+    };
+    var extendObject = function(){
+	return object;
     }
-};
+    return extendObject;
+}
 
-var result = object.get();
-console.log(result);
+var objCall = getObject(); 
+console.log(objCall())
