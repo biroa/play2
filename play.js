@@ -1,3 +1,21 @@
+//Callback Example
+
+
+function multiplyByTwo(a, b, c, callback) {
+    var i, ar = [];
+    for (i = 0; i < 3; i++) {
+	ar[i] = callback(arguments[i] * 2);
+    }
+    return ar;
+}
+
+function addOne(a) {
+    return a + 1;
+}
+
+myarr = multiplyByTwo(1, 2, 3, addOne);
+console.log(myarr);
+
 //Immediate  Function
 (function (){
     console.log('Executed');
