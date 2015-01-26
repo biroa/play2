@@ -1,3 +1,8 @@
+//Immediate  Function
+(function (){
+    console.log('Executed');
+})();
+
 var getObject = function(){
     var object = {
 	name:'objectName',
@@ -6,6 +11,7 @@ var getObject = function(){
 	    return 'the name of the object is: ' + this.name;
 	}
     };
+    //Anonymus functions
     var extendObject = function(){
 	return object;
     }
