@@ -13,8 +13,19 @@ function addOne(a) {
     return a + 1;
 }
 
-myarr = multiplyByTwo(1, 2, 3, addOne);
-console.log(myarr);
+function theOne(callback){
+	var text = 'This is two in one';
+	callback(text);
+}
+
+function theTwo(text){
+	console.log(text);
+}
+
+//myarr = multiplyByTwo(1, 2, 3, addOne);
+//console.log(myarr);
+
+theOne(theTwo);
 
 //Immediate  Function
 (function (){
