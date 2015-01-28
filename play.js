@@ -1,4 +1,4 @@
-//Callback Example
+//Callback Example 1
 
 
 function multiplyByTwo(a, b, c, callback) {
@@ -13,6 +13,8 @@ function addOne(a) {
     return a + 1;
 }
 
+//Callback Example 2
+
 function theOne(callback){
 	var text = 'This is two in one';
 	callback(text);
@@ -22,9 +24,10 @@ function theTwo(text){
 	console.log(text);
 }
 
-//myarr = multiplyByTwo(1, 2, 3, addOne);
-//console.log(myarr);
 
+//CallBack Calls
+myarr = multiplyByTwo(1, 2, 3, addOne);
+console.log(myarr);
 theOne(theTwo);
 
 //Immediate  Function
@@ -32,6 +35,7 @@ theOne(theTwo);
     console.log('Executed');
 })();
 
+// SMALL OOP
 var getObject = function(){
     var object = {
 	name:'objectName',
@@ -49,3 +53,38 @@ var getObject = function(){
 
 var objCall = getObject(); 
 console.log(objCall())
+
+// PLAY WITH OOP
+
+
+function Gadget(name,color){
+    this.name;
+    this.color;
+    this.whatAreYou = function(){
+	return 'I am a ' + this.color + '' + this.name;
+    };
+};
+
+Gadget.prototype.price = 100;
+Gadget.prototype.rating = 3;
+Gadget.prototype.getInfo = function(){
+    return 'Rating: ' + this.color + ' ' + this.name;
+};
+
+Gadget.prototype = {
+    rating : '$1000'
+};
+
+var newtoy = new Gadget('camera','black');
+console.log(newtoy.rating);
+
+
+
+
+
+
+
+
+
+
+
