@@ -65,18 +65,18 @@ function Gadget(name,color){
     };
 };
 
-Gadget.prototype.price = 100;
-Gadget.prototype.rating = 3;
-Gadget.prototype.getInfo = function(){
-    return 'Rating: ' + this.color + ' ' + this.name;
-};
+//Gadget.prototype.price = 100;
+//Gadget.prototype.rating = 3;
+//Gadget.prototype.getInfo = function(){
+//    return 'Rating: ' + this.color + ' ' + this.name;
+//};
 
-Gadget.prototype = {
-    rating : '$1000'
-};
+//Gadget.prototype = {
+//    rating : '$1000'
+//};
 
 var newtoy = new Gadget('camera','black');
-console.log(newtoy.rating);
+console.log(newtoy.name);
 
 
 
