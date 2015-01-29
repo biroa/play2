@@ -59,10 +59,6 @@ console.log(objCall())
 
 function Gadget(name,color){
     this.name;
-    this.color;
-    this.whatAreYou = function(){
-	return 'I am a ' + this.color + '' + this.name;
-    };
 };
 
 //Gadget.prototype.price = 100;
@@ -75,9 +71,9 @@ function Gadget(name,color){
 //    rating : '$1000'
 //};
 
-var newtoy = new Gadget('camera','black');
-console.log(newtoy.name);
-
+Gadget.prototype.name = 'mirror';
+var toy = new Gadget('camera');
+console.log(toy.name);
 
 
 
