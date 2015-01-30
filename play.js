@@ -36,24 +36,24 @@ theOne(theTwo);
 })();
 
 // SMALL OOP
-var getObject = function(){
-    var object = {
-	name:'objectName',
-	age: '20',
-	get: function(){
-	    return 'the name of the object is: ' + this.name;
-	}
-    };
-    //Anonymus functions
-    var extendObject = function(){
-	return object;
+
+var object = {
+    name:'shaw',
+    age: '20',
+    get: function(){
+	return 'the name of the object is: ' + this.name;
+    },
+    getFakeName: function(param){
+	return 'the name of the object is: ' + param
     }
-    return extendObject;
-}
 
-var objCall = getObject(); 
-console.log(objCall())
+};
 
+console.log(object.name);
+console.log(object.get());
+console.log(object.getFakeName('nail'));
+object.name = 'scissor'
+console.log(object.name);
 // PLAY WITH OOP
 
 
