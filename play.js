@@ -45,15 +45,51 @@ var object = {
     },
     getFakeName: function(param){
 	return 'the name of the object is: ' + param
+    },
+    getMoreParameter: function(param1,param2,param3){
+	return 'parameters ' + param1 +','+ param2 +','+ param3 +'!';
     }
 
 };
 
+var my_obj = {name: 'Dude'};
+
 console.log(object.name);
 console.log(object.get());
 console.log(object.getFakeName('nail'));
+// we can call a different object methode on another object with call:
+console.log(object.get.call(my_obj,'shovel'));
+//apply uses array
+console.log(object.getMoreParameter.apply(my_obj, ['a', 'b', 'c']));
+//call accept strinf
+console.log(object.getMoreParameter.call(my_obj, 'a', 'b', 'c'));
+
 object.name = 'scissor'
 console.log(object.name);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // PLAY WITH OOP
 
 
