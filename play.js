@@ -57,23 +57,14 @@ console.log(objCall())
 // PLAY WITH OOP
 
 
-function Gadget(name,color){
-    this.name;
+function Gadget(name){
+    this.name = 'screwdriver';
 };
 
-//Gadget.prototype.price = 100;
-//Gadget.prototype.rating = 3;
-//Gadget.prototype.getInfo = function(){
-//    return 'Rating: ' + this.color + ' ' + this.name;
-//};
 
-//Gadget.prototype = {
-//    rating : '$1000'
-//};
-
-Gadget.prototype.name = 'mirror';
 var toy = new Gadget('camera');
 console.log(toy.name);
+console.log(toy.hasOwnProperty('name'));
 
 
 
