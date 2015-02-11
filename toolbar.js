@@ -1,3 +1,21 @@
+//Immediately invoked function
+//
+var tobject = (function(tobject){
+    tobject.createToolbar = function (elementId){
+	var element = document.getElementById(elementId);
+	
+	
+	
+    }
+
+
+    return tobject;
+})(tobject || {});
+
+//we add tobject to the func
+//if tobject not exist we add an empty obj
+
+
 /*
     Access of toolbar
 
