@@ -1,9 +1,21 @@
 //Immediately invoked function
 //
 var tobject = (function(tobject){
+
+    var createToolbarItems = function(){
+
+
+    }
+
+
+
     tobject.createToolbar = function (elementId){
 	var element = document.getElementById(elementId);
+	var items = element.querySelector(".toolbar-item");
 	
+	return{
+	    items: createToolbarItems(items)
+	}
 	
 	
     }
