@@ -2,8 +2,19 @@
 //
 var tobject = (function(tobject){
 
-    var createToolbarItems = function(){
+    var createToolbarItems = function(itemElements){
+	var items = [];
+	//we use itemElements as context becaue itemElements is a node list not 
+	//an array so we would not get forEach for the node list. But if we give
+	//the contest we can cheat it
+	[].forEach.call(itemElements, function(el, index, array){
+	    var item = {
+		el:el
+	    };
 
+	})
+	
+	return items;
 
     }
 
