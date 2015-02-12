@@ -73,20 +73,10 @@ var tobject = (function (tobject) {
  Access of toolbar
 
  var toolbar = tobject.createToolbar("myToolbar");
- toolbar.items[0].disable();
- toolbar.items[0].isDisabled();
- toolbar.items[0].enable();
- toolbar.items[0].activate();
- toolbar.items[0].deactivate();
+ toolbar.items[0].enabled = false;
+ toolbar.items[0].enabled = true;
+ toolbar.items[0].activated = true;
+ toolbar.items[0].activated = false;
  toolbar.items[0].toggleActiveState();
-
- var toolbarItem = toolbar.items[0];
-
- toolbarItem.getEnabled(true); // or fase
- toolbarItem.getEnabled();
-
- toolbarItem.enabled = true; // or fasle
-
- var enabled = toolbarItem.enabled;
 
  */
