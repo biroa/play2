@@ -1,12 +1,10 @@
 //Immediately invoked function
 //
-var tobject = (function (tobject) {
+var tobject = (function (oojs) {
 
     var createToolbarItems = function (itemElements) {
         var items = [];
-        //we use itemElements as context becaue itemElements is a node list not
-        //an array so we would not get forEach for the node list. But if we give
-        //the contest we can cheat it
+
         [].forEach.call(itemElements, function (el, index, array) {
 
             var item = {
@@ -43,28 +41,29 @@ var tobject = (function (tobject) {
                         }
                     }
                 }
+
             });
 
-            return items;
+            items.push(item);
 
         });
 
 
-        tobject.createToolbar = function (elementId) {
-            var element = document.getElementById(elementId);
-            var items = element.querySelectorAll(".toolbar-item");
+        return items;
+    };
 
-            return {
-                items: createToolbarItems(items)
-            }
+    tobject.createToolbar = function (elementId) {
+        var element = document.getElementById(elementId);
+        var items = element.querySelectorAll(".toolbar-item");
 
-        }
+        return {
+            items: createToolbarItems(items)
+        };
 
+    };
 
-        return tobject;
-
-    }(tobject || {})
-});
+    return tobject;
+}(tobject || {}));
 
 //we add tobject to the func
 //if tobject not exist we add an empty obj
