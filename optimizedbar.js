@@ -1,6 +1,6 @@
 //Immediately invoked function
 //
-var tobject = (function (oojs) {
+var tobject = (function (tobject) {
 
     var createToolbarItems = function (itemElements) {
         var items = [];
