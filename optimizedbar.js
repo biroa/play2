@@ -69,14 +69,14 @@ var tobject = (function (tobject) {
 //if tobject not exist we add an empty obj
 
 
-/*
+/******************
  Access of toolbar
-
+***************************************************
  var toolbar = tobject.createToolbar("myToolbar");
  toolbar.items[0].enabled = false;
  toolbar.items[0].enabled = true;
  toolbar.items[0].activated = true;
  toolbar.items[0].activated = false;
  toolbar.items[0].toggleActiveState();
-
+***************************************************
  */
