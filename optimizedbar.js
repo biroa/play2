@@ -8,48 +8,42 @@ var tobject = (function(tobject){
 	//an array so we would not get forEach for the node list. But if we give
 	//the contest we can cheat it
 	[].forEach.call(itemElements, function(el, index, array){
-
-	    var item = {
-		el:el,
-		disable: function(){
-		    this.el.classList.add("disabled");
+	
+	var item = {
+	    toggleActiveState: function(){
+		this.activated = !this.activated;
+	    }
+	};
+	
+	Object.defineProperties(item,{
+	    el:{
+		value:el
+	    },
+	    enabled:{
+		get: function(){
+		    return !this.el.classList.contains("disabled");
 		},
-		enable: function(){
-		    this.el.classList.remove("disabled");
-		},
-		isDisabled: function(){
-			return this.el.classList.contains("disabled");
-		},
-		activate: function(){
-		    if(this.isDisabled()){
-			return;
+		set: function(value){
+		    if(value){
+			this.el.classList.remove("disabled");
+		    }else{
+			this.el.classList.add("disabled");
 		    }
-		    
-		    this.el.classList.add("active");
-		},
-		deactivate: function(){
-		    if(this.isDisabled()){
-			return;
-		    }
-		    
-		    this.el.classList.remove("active");
-		},
-		isActive: function(){
+		} 
+	    },
+	    activated:{
+		get: function(){
 		    return this.el.classList.contains("active");
 		},
-		toggleActiveState: function(){
-		    
-		    if(this.isActive()){
-			this.deactivate();
+		set: function(value){
+		    if(value){
+			this.el.classList.add("active");
 		    }else{
-			this.activate();
+			this.el.classList.remove("active");
 		    }
-		}    
-	    };
-    	    
-	    items.push(item);
-	    
-    });
+		}
+	    }
+	});
 	
 	return items;
 
