@@ -46,8 +46,10 @@ var tobject = (function (tobject) {
 
 
     var createToolbarItems = function (itemElements) {
+        var items = [];
 
         [].forEach.call(itemElements, function (el, index, array) {
+            var item = createToolbarItem(el);
             items.push(item);
         });
 
