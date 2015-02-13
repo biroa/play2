@@ -11,7 +11,7 @@ var tobject = (function (tobject) {
 
         Object.defineProperties(item, {
             el: {
-                value: el
+                value: itemElement
             },
             enabled: {
                 get: function () {
