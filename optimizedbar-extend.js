@@ -131,4 +131,11 @@ var tobject = (function (tobject) {
  toolbar.items[0].activated = false;
  toolbar.items[0].toggleActiveState();
  ***************************************************
+ * Add a new toolbar and add remove elements from there
+ * *************************************************
+ *  var anotherToolbar = tobject.createToolbar("toolbarName");
+ *  anotherToolbar.appendTo(document.getElementById("myToolbar2"));
+ *  anotherToolbar.add();
+ *  toolbar1.remove(0);
+ *  toolbar1.items[0].enabled = false;
  */
