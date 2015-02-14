@@ -32,4 +32,4 @@ var createEmployee = function (firstName, lastName, position) {
     });
 
     return person;
-}
+};

@@ -64,7 +64,7 @@ console.log(object.getMoreParameter.apply(my_obj, ['a', 'b', 'c']));
 //call accept strinf
 console.log(object.getMoreParameter.call(my_obj, 'a', 'b', 'c'));
 
-object.name = 'scissor'
+object.name = 'scissor';
 console.log(object.name);
 
 
@@ -95,9 +95,7 @@ console.log(object.name);
 
 function Gadget(name){
     this.name = 'screwdriver';
-};
-
-
+}
 var toy = new Gadget('camera');
 console.log(toy.name);
 console.log(toy.hasOwnProperty('name'));

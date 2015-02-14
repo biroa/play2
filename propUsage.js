@@ -17,7 +17,7 @@ var createPerson = function(firstName,lastName){
 	}
     });
     return person;
-}
+};
 
 var person = createPerson("John","Doe");
 

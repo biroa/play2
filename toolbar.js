@@ -64,7 +64,7 @@ var tobject = (function (tobject) {
             items: createToolbarItems(items)
         }
 
-    }
+    };
 
 
     return tobject;
