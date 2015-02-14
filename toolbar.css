@@ -12,11 +12,7 @@
 }
 
 .white{
-    display: inline-block;
-    height: 50px;
-    width:  50px;
-    background-color: green;
-    color: white;
+    background-color: white;
 }
 
 
