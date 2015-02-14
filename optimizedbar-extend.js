@@ -59,6 +59,13 @@ var tobject = (function (tobject) {
 
     tobject.createToolbar = function (elementId) {
         var element = document.getElementById(elementId);
+
+        if (!element) {
+            element = document.createElement("DIV");
+            element.id = elementId;
+            element.className = "toolbar";
+        }
+
         var items = element.querySelectorAll(".toolbar-item");
 
         return {
