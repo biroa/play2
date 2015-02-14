@@ -68,10 +68,50 @@ var tobject = (function (tobject) {
 
         var items = element.querySelectorAll(".toolbar-item");
 
-        return {
-            items: createToolbarItems(items)
+
+        var items = element.querySelectorAll(".toolbar-item");
+
+        var toolbar = {
+            add: function (options) {
+                var span = document.createElement("SPAN");
+                span.className = "toolbar-item";
+
+                this.el.appendChild(span);
+
+                var item = createToolbarItem(span);
+
+                this.items.push(item);
+            },
+            remove: function (index) {
+                var len = this.items.length;
+
+                if (index > len || index < 0) {
+                    throw new Error("Index is out of range");
+                }
+
+                var item = this.items[index];
+                this.items.splice(index, 1);
+
+                this.el.removeChild(item.el);
+
+                item = null;
+            },
+            appendTo: function (parentElement) {
+                parentElement.appendChild(this.el);
+            }
         };
 
+        Object.defineProperties(toolbar, {
+            el: {
+                value: element
+            },
+            items: {
+                value: createToolbarItems(items),
+                enumerable : true
+            }
+        });
+
+        return toolbar;
     };
 
     return tobject;
