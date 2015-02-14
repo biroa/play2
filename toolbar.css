@@ -11,6 +11,16 @@
     background-color: green;
 }
 
+.toolbar-item.white{
+    display: inline-block;
+    height: 50px;
+    width:  50px;
+    background-color: green;
+    color: white;
+}
+
+
+
 .active{
     background-color: yellow;
 }
