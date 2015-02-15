@@ -37,7 +37,7 @@ var createEmployee = function (firstName, lastName, position) {
     var sayHelloFn = person.sayHello.bind(person);
 
      person.sayHello = function(){
-        return sayHelloFn() + " My name is " + this.firstName;
+        return sayHelloFn() + " My name is " + this.fullName;
     }
 
     return person;
