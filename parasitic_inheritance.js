@@ -3,7 +3,7 @@ var createPerson = function (firstName, lastName) {
         firstName: firstName,
         lastName: lastName,
         sayHello: function(){
-            return "Say Hello";
+            return "Say Hello!";
         }
     };
 
@@ -24,20 +24,21 @@ var createEmployee = function (firstName, lastName, position) {
     person.position = position;
 
     var fullName = Object.getOwnPropertyDescriptor(person, "fullName");
-    var sayHello = Object.getOwnPropertyDescriptor(person, "sayHello");
     var fullNameFunction = fullName.get.bind(person);
-    var sayHelloFunction = sayHello.get.bind(person);
 
-    Object.defineProperties(person, "fullName","sayHello", {
+    Object.defineProperty(person, "fullName",{
         get: function () {
             return fullNameFunction() + "," + this.position;
         },
         enumerable: true,
-        configurable: true,
-        getSayHello: function(){
-            return sayHelloFunction() + " " + this.get();
-        }
+        configurable: true
     });
+
+    var sayHelloFn = person.sayHello.bind(person);
+
+     person.sayHello = function(){
+        return sayHelloFn() + " My name is " + this.firstName;
+    }
 
     return person;
 };
