@@ -1,7 +1,10 @@
 var createPerson = function (firstName, lastName) {
     var person = {
         firstName: firstName,
-        lastName: lastName
+        lastName: lastName,
+        sayHello: function(){
+            return "Say Hello";
+        }
     };
 
 
