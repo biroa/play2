@@ -23,15 +23,20 @@ var createEmployee = function (firstName, lastName, position) {
 
     person.position = position;
 
-    var fullName = Object.getOwnPropertyDescriptor(person, "fullNAme");
+    var fullName = Object.getOwnPropertyDescriptor(person, "fullName");
+    var sayHello = Object.getOwnPropertyDescriptor(person, "sayHello");
     var fullNameFunction = fullName.get.bind(person);
+    var sayHelloFunction = sayHello.get.bind(person);
 
-    Object.defineProperty(person, "fullName", {
+    Object.defineProperties(person, "fullName","sayHello", {
         get: function () {
             return fullNameFunction() + "," + this.position;
         },
         enumerable: true,
-        configurable: true
+        configurable: true,
+        getSayHello: function(){
+            return sayHelloFunction() + " " + this.get();
+        }
     });
 
     return person;
