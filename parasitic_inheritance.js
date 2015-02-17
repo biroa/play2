@@ -40,5 +40,22 @@ var createEmployee = function (firstName, lastName, position) {
         return sayHelloFn() + " My name is " + this.fullName;
     }
 
+    /**
+     * usage:
+     *
+     * var adamBiro = createEmployee("Adam", "Biro", "developer");
+     * adamBiro.firstName;
+     * adamBiro.firstName = "Ádám";
+     * adamBiro.lastName;
+     * adamBiro.firstName = "Bíró";
+     * adamBiro.fullName;
+     * adamBiro.position;
+     * adamBiro.position = "Web Developer";
+     * adamBiro.sayHello();
+     *
+     *
+     */
+
     return person;
 };
+
