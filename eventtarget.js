@@ -1,5 +1,5 @@
 var EventTarget = function () {
-    Object.definePropertiey(this, "__listeners", {
+    Object.defineProperty(this, "__listeners", {
         value: {}
     });
 };
@@ -7,7 +7,7 @@ var EventTarget = function () {
 Object.defineProperties(EventTarget.prototype, {
     addListener: {
         value: function (type, listener) {
-            if (typeof this.__listeners[type] == undefined) {
+            if (typeof this.__listeners[type] === "undefined") {
                 this.__listeners[type] = [];
             }
 

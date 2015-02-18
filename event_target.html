@@ -14,13 +14,13 @@
         }
 
         var obj = new EventTarget();
-        obj.addListener("load",listener1());
-        obj.addListener("load",listener2());
+        obj.addListener("load",listener1);
+        obj.addListener("load",listener2);
 
         obj.__fire({type : "load"});
 
-        obj.removeListener("load",listener1());
-        obj.removeListener("load",listener2());
+        obj.removeListener("load",listener1);
+        obj.removeListener("load",listener2);
 
         obj.__fire({type:"load"});
 
