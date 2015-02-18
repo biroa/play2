@@ -1,5 +1,6 @@
 var tobject = (function (tobject) {
 
+    //Constructor function
     var ToolbarItem = function (itemElement) {
         Object.defineProperty(this, "__el", {
             value: itemElement
