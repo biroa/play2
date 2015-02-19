@@ -33,10 +33,8 @@ Object.defineProperties(EventTarget.prototype, {
                 return;
             }
 
-            for (var i = 0, len = listeners.length; i < len; i++) {
+            for (var i = 0; i < listeners.length; i++) {
                 listeners[i].call(this, evtObj);
-
-
             }
         }
     },
