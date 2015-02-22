@@ -1,8 +1,8 @@
 var tobject = (function (tobject) {
 
-    //Constructor function
     var ToolbarItem = function (itemElement) {
         EventTarget.call(this);
+
         Object.defineProperty(this, "__el", {
             value: itemElement
         });
@@ -22,7 +22,7 @@ var tobject = (function (tobject) {
             set: function (value) {
                 var currentValue = this.enabled;
 
-                if(currentValue == value){
+                if (currentValue === value) {
                     return;
                 }
 
@@ -33,11 +33,13 @@ var tobject = (function (tobject) {
                 }
 
                 this.__fire({
-                    type:"enabledchange",
+                    type: "enabledchanged",
                     value: value
                 });
+
             }
-            //enabledChange
+
+            //enabledchanged
         },
         activated: {
             get: function () {
@@ -46,7 +48,7 @@ var tobject = (function (tobject) {
             set: function (value) {
                 var currentValue = this.activated;
 
-                if(currentValue == value){
+                if (currentValue === value) {
                     return;
                 }
 
@@ -57,13 +59,13 @@ var tobject = (function (tobject) {
                 }
 
                 this.__fire({
-                    type:"activatedchange",
+                    type: "activatedchanged",
                     value: value
                 });
-
             }
+
+            //activatedchanged
         }
-        //activatedChange
 
     });
 
@@ -81,6 +83,7 @@ var tobject = (function (tobject) {
 
     var Toolbar = function (toolbarElement) {
         EventTarget.call(this);
+
         var items = toolbarElement.querySelectorAll(".toolbar-item");
 
         Object.defineProperties(this, {
@@ -108,7 +111,7 @@ var tobject = (function (tobject) {
 
                 this.__fire({
                     type: "itemadded",
-                    item:item
+                    item: item
                 });
             },
             enumerable : true
@@ -129,9 +132,9 @@ var tobject = (function (tobject) {
                 item = null;
 
                 this.__fire({
-                    type: "itemremoved"
+                    type: "itemremoved",
+                    index: index
                 });
-
             },
             enumerable : true
         },
@@ -143,7 +146,6 @@ var tobject = (function (tobject) {
                     type: "appended",
                     parentElement: parentElement
                 });
-
             },
             enumerable: true
         }
@@ -160,7 +162,6 @@ var tobject = (function (tobject) {
 
         return new Toolbar(element);
     };
-
 
     return tobject;
 }(tobject || {}));
