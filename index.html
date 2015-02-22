@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="toolbar.css"/>
-    <script type="text/javascript" src="parasitic_inheritance.js"></script>
-    <script type="text/javascript" src="optimizedbar_2.js"></script>
+    <script type="text/javascript" src="eventtarget.js"></script>
+    <script type="text/javascript" src="optimizedtoolbar_with_eventtarget.js"></script>
+    <script>
+        var toolbar = tobject.createToolbar("myToolbar");
+        toolbar.addListener("itemremoved",function(evt){
+            alert(evt.type);
+        });
+
+        tobject.items[0].addListener("enabledchanged",function(evt){
+            alert(evt.value);
+        })
+
+    </script>
 
 </head>
 <body>
