@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="toolbar.css"/>
-    <script type="text/javascript" src="eventtarget.js"></script>
-    <script type="text/javascript" src="optimizedtoolbar_with_eventtarget.js"></script>
+
     <script>
         var toolbar = tobject.createToolbar("myToolbar");
         toolbar.addListener("itemremoved",function(evt){
             alert(evt.type);
         });
 
-        toolbar.items[0].addListener("enabledchanged",function(evt){
+        toolbar.items[0].addListener("enabledchange",function(evt){
             alert(evt.value);
         })
 
@@ -30,5 +29,7 @@
 <div id="myToolbar2">
 </div>
 
+<script type="text/javascript" src="eventtarget.js"></script>
+<script type="text/javascript" src="optimizedtoolbar_with_eventtarget.js"></script>
 </body>
 </html>
