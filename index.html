@@ -14,17 +14,38 @@
 </div>
 
 <script type="text/javascript" src="eventtarget.js"></script>
-<script type="text/javascript" src="optimizedtoolbar_with_eventtarget.js"></script>
+<script type="text/javascript"
+        src="optimizedtoolbar_with_eventtarget.js"></script>
 <script>
+    // Init toolbar
     var toolbar = tobject.createToolbar("myToolbar");
-    toolbar.addListener("itemremoved",function(evt){
+    toolbar.addListener("itemremoved", function (evt) {
         alert(evt.type);
     });
 
     console.log(toolbar.items[0]);
-    toolbar.items[0].addListener("enabledchanged",function(evt){
+    toolbar.items[0].addListener("enabledchanged", function (evt) {
         alert(evt.value);
     });
+
+    /******************
+     Usage of toolbar
+     ***************************************************
+     var toolbar = tobject.createToolbar("myToolbar");
+     toolbar.items[0].enabled = false;
+     toolbar.items[0].enabled = true;
+     toolbar.items[0].activated = true;
+     toolbar.items[0].activated = false;
+     toolbar.items[0].toggleActiveState();
+     ***************************************************
+     * Add a new toolbar and add remove elements from there
+     * *************************************************
+     *  var anotherToolbar = tobject.createToolbar("toolbarName");
+     *  anotherToolbar.appendTo(document.getElementById("myToolbar2"));
+     *  anotherToolbar.add();
+     *  anotherToolbar.remove(0);
+     *  anotherToolbar.items[0].enabled = false;
+     */
 
 </script>
 
