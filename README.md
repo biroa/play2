@@ -9,4 +9,6 @@ ECMAScript5
         6,  prototype_inheritance.js
         7,  toolbar.js
         8,  eventtarget.js
-        
+        9,  prototype_inheritance.js
+       10,  optimizedtoolbar_with_eventtarget.js
+            [toolbar functionality built with eventTarget]
